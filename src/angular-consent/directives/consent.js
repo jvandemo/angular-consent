@@ -9,7 +9,7 @@
       restrict: 'A',
       controller: 'angularConsent.ConsentController',
       controllerAs: '$consent'
-    }
+    };
   }
 
 })(angular);
