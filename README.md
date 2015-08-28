@@ -1,4 +1,5 @@
 # Angular Consent
+[![Build Status](https://travis-ci.org/jvandemo/angular-consent.png?branch=master)](https://travis-ci.org/jvandemo/angular-consent)
 
 ```xml
 <!-- consent attribute exposes $consent controller -->
