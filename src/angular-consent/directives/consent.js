@@ -7,6 +7,7 @@
   function createDirectiveDDO(){
     return {
       restrict: 'A',
+      scope: true,
       controller: 'angularConsent.ConsentController',
       controllerAs: '$consent'
     };
