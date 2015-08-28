@@ -3,7 +3,7 @@
 
 Easily show consent messages that keep appearing until the user clicks them away.
 
-Useful if you need to show legal disclaimers.
+Useful if you need to show legal disclaimers (e.g. to conform to the EU Cookie Consent law).
 
 - very lightweight (~1KB)
 - use your own markup and CSS to make the messages fit perfectly in your application
