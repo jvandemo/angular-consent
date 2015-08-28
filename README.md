@@ -6,8 +6,7 @@ Easily show consent messages that keep appearing until the user clicks them away
 Useful if you need to show legal disclaimers.
 
 - very lightweight (~1KB)
-- use your own markup
-- use your own CSS
+- use your own markup and CSS to make the messages fit perfectly in your application
 - supports multiple consent messages on the same page
 
 [Try online demo](http://angular-consent-demo.surge.sh/).
