@@ -15,6 +15,8 @@ Requirements:
 
 - [ngCookies](https://docs.angularjs.org/api/ngCookies/service/$cookies)
 
+[![Screenshot](https://cloud.githubusercontent.com/assets/1859381/9572079/6a1f3d22-4fa9-11e5-8afd-5685251bea8c.png)](http://angular-consent-demo.surge.sh/)
+
 ## Quick example
 
 ```xml
