@@ -11,11 +11,23 @@
     };
 
     this.getCookieValue = function(){
-      return $cookies.get(this.getCookieKey());
+      try {
+        return $cookies.get(this.getCookieKey())
+      } catch (e) {
+        if (e instanceof TypeError){
+          return $cookies[this.getCookieKey()];
+        }
+      }
     };
 
     this.setCookieValue = function(value){
-      return $cookies.put(this.getCookieKey(), value);
+      try {
+        $cookies.put(this.getCookieKey(), value)
+      } catch (e) {
+        if (e instanceof TypeError){
+          $cookies[this.getCookieKey()] = value ;
+        }
+      }
     };
 
     this.hasAlreadyAgreed = function(){
@@ -30,7 +42,13 @@
     };
 
     this.reset = function(){
-      $cookies.remove(this.getCookieKey());
+      try {
+        $cookies.remove(this.getCookieKey())
+      } catch (e) {
+        if (e instanceof TypeError){
+          delete $cookies[this.getCookieKey()];
+        }
+      }
     };
 
     this.agree = function(){
