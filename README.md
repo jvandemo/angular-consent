@@ -108,6 +108,17 @@ You can also re-use a consent across your page or application:
 </footer>
 ```
 
+By default cookies are stored for 360 days, but you can customize cookie options on a consent level:
+
+```xml
+<!-- expirationDate should be string string of form 'Wdy, DD Mon YYYY HH:MM:SS GMT' -->
+<header consent="cookie-disclaimer" consent-cookie-options="{ expires: expirationDate }">
+  <section ng-if="$consent.hasNotAgreedYet()">
+    <p>This website uses cookies. The cookie will be stored until expiration date.</p>
+  </section>
+</header>
+```
+
 ## The $consent API
 
 The following methods are available on the `$consent` object:
@@ -206,6 +217,11 @@ $ gulp test-dist-minified
 ```
 
 ## Change log
+
+### v2.0.0
+
+- Cookies are now stored for 360 days by default (instead of session)
+- Added support for cookie options via `consent-cookie-options` attribute
 
 ### v1.0.0
 
