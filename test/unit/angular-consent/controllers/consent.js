@@ -4,15 +4,20 @@ describe('angular-consent controller', function() {
 
   var $controller;
   var $cookies;
+  var $scope;
+  var $rootScope;
   var ctrl;
 
   beforeEach(module('angularConsent'));
 
-  beforeEach(inject(function(_$controller_, _$cookies_){
+  beforeEach(inject(function(_$controller_, _$cookies_, _$rootScope_){
     $controller = _$controller_;
     $cookies = _$cookies_;
+    $rootScope = _$rootScope_;
+    $scope = $rootScope.$new();
     ctrl = $controller('angularConsent.ConsentController', {
-      $attrs: {}
+      $attrs: {},
+      $scope: $scope
     });
   }));
 
