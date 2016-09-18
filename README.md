@@ -218,6 +218,10 @@ $ gulp test-dist-minified
 
 ## Change log
 
+### v2.1.0
+
+- Added support for AngularJS versions older than AngularJS 1.4
+
 ### v2.0.0
 
 - Cookies are now stored for 360 days by default (instead of session)
