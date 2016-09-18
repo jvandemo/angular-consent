@@ -24,7 +24,7 @@
 
     this.getCookieValue = function(){
       try {
-        return $cookies.get(this.getCookieKey())
+        return $cookies.get(this.getCookieKey());
       } catch (e) {
         if (e instanceof TypeError){
           return $cookies[this.getCookieKey()];
@@ -55,7 +55,7 @@
 
     this.reset = function(){
       try {
-        $cookies.remove(this.getCookieKey())
+        $cookies.remove(this.getCookieKey());
       } catch (e) {
         if (e instanceof TypeError){
           delete $cookies[this.getCookieKey()];
