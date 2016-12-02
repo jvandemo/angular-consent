@@ -11,15 +11,17 @@
     };
 
     this.getCookieOptions = function(){
-      if(!$attrs.consentCookieOptions){
+      var options = {};
+      if($attrs.consentCookieOptions){
+        options = $scope.$eval($attrs.consentCookieOptions);
+      }
+      if(!options.hasOwnProperty('expires')){
         var now = new Date();
         var expirationDate = new Date();
         expirationDate.setTime(+ now + (360 * 24 * 60 * 60 * 1000)); // 360 days
-        return {
-          expires: expirationDate.toGMTString()
-        };
+        options.expires = expirationDate.toGMTString();
       }
-      return $scope.$eval($attrs.consentCookieOptions);
+      return options;
     };
 
     this.getCookieValue = function(){
