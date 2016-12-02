@@ -218,6 +218,10 @@ $ gulp test-dist-minified
 
 ## Change log
 
+### v2.1.1
+
+- Added check to make sure expires is always set correctly to fix #4
+
 ### v2.1.0
 
 - Added support for AngularJS versions older than AngularJS 1.4

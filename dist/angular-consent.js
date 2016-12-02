@@ -26,23 +26,6 @@
 (function (angular) {
 
   angular
-    .module('angularConsent.directives')
-    .directive('consent', createDirectiveDDO);
-
-  function createDirectiveDDO(){
-    return {
-      restrict: 'A',
-      scope: true,
-      controller: 'angularConsent.ConsentController',
-      controllerAs: '$consent'
-    };
-  }
-
-})(angular);
-
-(function (angular) {
-
-  angular
     .module('angularConsent.controllers')
     .controller('angularConsent.ConsentController', ConsentController);
 
@@ -53,15 +36,17 @@
     };
 
     this.getCookieOptions = function(){
-      if(!$attrs.consentCookieOptions){
+      var options = {};
+      if($attrs.consentCookieOptions){
+        options = $scope.$eval($attrs.consentCookieOptions);
+      }
+      if(!options.hasOwnProperty('expires')){
         var now = new Date();
         var expirationDate = new Date();
         expirationDate.setTime(+ now + (360 * 24 * 60 * 60 * 1000)); // 360 days
-        return {
-          expires: expirationDate.toGMTString()
-        };
+        options.expires = expirationDate.toGMTString();
       }
-      return $scope.$eval($attrs.consentCookieOptions);
+      return options;
     };
 
     this.getCookieValue = function(){
@@ -111,5 +96,22 @@
   }
 
   ConsentController.$inject = ['$cookies', '$attrs', '$scope'];
+
+})(angular);
+
+(function (angular) {
+
+  angular
+    .module('angularConsent.directives')
+    .directive('consent', createDirectiveDDO);
+
+  function createDirectiveDDO(){
+    return {
+      restrict: 'A',
+      scope: true,
+      controller: 'angularConsent.ConsentController',
+      controllerAs: '$consent'
+    };
+  }
 
 })(angular);
