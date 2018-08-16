@@ -218,6 +218,10 @@ $ gulp test-dist-minified
 
 ## Change log
 
+### v2.2.0
+
+- Added main property to package.json (#5)
+
 ### v2.1.1
 
 - Added check to make sure expires is always set correctly to fix #4
