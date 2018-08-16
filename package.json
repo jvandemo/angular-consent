@@ -1,5 +1,6 @@
 {
   "name": "angular-consent",
+  "main": "dist/angular-consent.js",
   "version": "2.1.1",
   "author": {
     "name": "Jurgen Van de Moere",
